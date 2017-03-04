@@ -3,7 +3,6 @@ import * as event from './event/sagas';
 
 export default function* rootSaga() {
   yield [
-    ...announcement,
-    ...event,
+    event.watchFetchEvents(),
   ]
 }

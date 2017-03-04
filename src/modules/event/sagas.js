@@ -1,12 +1,12 @@
 import data from 'utils/data';
-import { put, take, call } from 'redux-saga/effects';
+import { put, take, call, takeLatest } from 'redux-saga/effects';
 import * as actions from './actions';
 
 export function* fetchEvents() {
   yield put(actions.requestEvents());
 
   try {
-    const response = yield call(data.request, 'events', 'get');
+    const response = yield call(data.request.bind(data), 'events.json', 'get');
 
     yield put(actions.receiveEvents(response));
   } catch (e) {
@@ -18,7 +18,7 @@ export function* fetchEvent(id) {
   yield put(requestEvent());
 
   try {
-    const response = yield call(data.request, 'events', 'get', id);
+    const response = yield call(data.request.bind(data), 'events.json', 'get', id);
 
     yield put(actions.receiveEvent(response));
   } catch (e) {
@@ -27,5 +27,5 @@ export function* fetchEvent(id) {
 }
 
 export function* watchFetchEvents() {
-  yield takeEvery('FETCH_EVENTS', fetchEvents);
+  yield takeLatest(actions.FETCH_EVENTS, fetchEvents);
 }

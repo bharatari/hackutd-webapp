@@ -31,9 +31,8 @@ export default {
    * @return {Promise}
    */
   request(dataType, method, id, query, body, settings) {
-    const { serialize, resolve } = this.processSettings(settings);
     const url = this.processUrl(dataType, id, query);
-    const options = this.processOptions(body, method, serialize);
+    const options = this.processOptions(body, method);
 
     return fetch(url, options)
       .then(this.checkStatus)
@@ -41,7 +40,7 @@ export default {
         return response.json();
       })
       .then((data) => {
-        return this.processResponse(data, resolve);
+        return this.processResponse(data);
       });
   },
 
@@ -72,12 +71,8 @@ export default {
     }
 
     if (body) {
-      if (serialize) {
-        options.body = JSON.stringify(body);
-        options.headers['Content-Type'] = 'application/json; charset=utf-8';
-      } else {
-        options.body = body;
-      }
+      options.body = JSON.stringify(body);
+      options.headers['Content-Type'] = 'application/json; charset=utf-8';
     }
 
     if (method) {
@@ -86,7 +81,7 @@ export default {
 
     return options;
   },
-  processResponse(body, resolve) {
+  processResponse(body) {
     return body;
   },
   /**

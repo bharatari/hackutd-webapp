@@ -14,7 +14,41 @@ export default class ScheduleView extends React.Component {
   render() {
     const content = () => (
       <div>
-        <h3>{this.props.event.name}</h3>
+        <div className="row">
+          <div className="col s12">
+            <div className="card">
+              <div className="card-content">
+                <span className="card-title">{this.props.event.name}</span>
+                <p>{this.props.event.description}</p>
+                <br />
+                <div className="row">
+                  <div className="col s2 m1">
+                    <i className="material-icons">schedule</i>
+                  </div>
+                  <div className="col s10 m11">
+                    <p>{this.props.event.start}{this.props.event.end ? ' | ' + this.props.event.end : ''}</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col s2 m1">
+                    <i className="material-icons">location_on</i>
+                  </div>
+                  <div className="col s10 m11">
+                    <p>{this.props.event.location}</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col s2 m1">
+                    <i className="material-icons">subject</i>
+                  </div>
+                  <div className="col s10 m11">
+                    <p>{this.props.event.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
 

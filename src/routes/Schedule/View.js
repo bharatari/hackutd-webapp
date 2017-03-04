@@ -11,6 +11,9 @@ export default class ScheduleView extends React.Component {
   componentDidMount() {
     this.props.actions.fetchEvents();
   }
+  navigate(id) {
+    this.props.actions.push('/app/event/' + id);
+  }
   render() {
     let showSchedule = () => {
       return (

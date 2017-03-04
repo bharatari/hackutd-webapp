@@ -4,8 +4,11 @@ import classNames from 'classnames';
 
 export default class Sidebar extends React.Component {
   static propTypes = {
-    handleClick: PropTypes.object,
+    onClick: PropTypes.object,
     data: PropTypes.object,
+  };
+  handleClick = (id) => {
+    this.props.onClick(id);
   };
   render() {
     const rows = () => {
@@ -13,7 +16,7 @@ export default class Sidebar extends React.Component {
 
       for (let i = 0; i < this.props.data.length; i++) {
         const element = (
-          <a href="#" className="collection-item">
+          <a href="#" className="collection-item" onClick={this.handleClick.bind(this, this.props.data[i].id)}>
             <div>
               <h5>{this.props.data[i].name}</h5>
               <p>{this.props.data[i].start}{this.props.data[i].end ? ' | ' + this.props.data[i].end : ''}</p>

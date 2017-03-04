@@ -11,6 +11,9 @@ export default class ScheduleView extends React.Component {
   componentDidMount() {
     this.props.actions.fetchEvents();
   }
+  navigate(id) {
+    this.props.actions.push('/app/event/' + id);
+  }
   render() {
   
     let tempEvents = [
@@ -40,7 +43,7 @@ export default class ScheduleView extends React.Component {
           <div className="row">
             <div className="col s12 l8 offset-l2">
               <h3>Schedule</h3>
-              <List data={this.props.events ? this.props.events : tempEvents} />
+              <List data={this.props.events ? this.props.events : tempEvents} onClick={this.props.navigate} />
             </div>
           </div>
         </div>

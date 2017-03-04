@@ -11,6 +11,10 @@ export default class ScheduleView extends React.Component {
   };
   componentDidMount() {
     this.props.actions.fetchAnnouncements();
+
+    setInterval(() => {
+      this.props.actions.fetchAnnouncements();
+    }, 10000);
   }
   render() {
     console.log(this.props.announcements);

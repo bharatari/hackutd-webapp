@@ -19,7 +19,7 @@ export default class ScheduleView extends React.Component {
           <div className="row">
             <div className="col s12 l8 offset-l2">
               <h3>Announcements</h3>
-              <CardList data={this.props.events ? this.props.events : null} onClick={this.navigate} />
+              <CardList data={this.props.events ? this.props.events : null} onClick={this.navigate} actions={true} />
             </div>
           </div>
         </div>

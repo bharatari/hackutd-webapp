@@ -328,6 +328,15 @@
     }
   }
 
+  .reactions {
+    padding: 0 !important;
+    padding-top: 20px !important;
+
+    a {
+      color: #5fc6c1 !important;
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .schedule {
       .collection {

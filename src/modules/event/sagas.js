@@ -29,3 +29,7 @@ export function* fetchEvent(id) {
 export function* watchFetchEvents() {
   yield takeLatest(actions.FETCH_EVENTS, fetchEvents);
 }
+
+export function* watchFetchEvent() {
+  yield takeLatest(actions.FETCH_EVENT, fetchEvent);
+}

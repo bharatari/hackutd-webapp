@@ -19,7 +19,7 @@ export default class Sidebar extends React.Component {
           <div key={i} className="card">
             <div className="card-content">
               <span className="card-title">{this.props.data[i].name}</span>
-              <p dangerouslySetInnerHTML={this.props.data[i].description}></p>
+              <p dangerouslySetInnerHTML={{ __html: this.props.data[i].description}}></p>
               <p className="card-time">{this.props.data[i].time}</p>
               <br />
               {this.props.actions ? (

@@ -54,7 +54,7 @@ export default class ScheduleView extends React.Component {
     return (
       <div>
         <Navbar />
-        {this.props.events ? showSchedule() : showError()}
+        {this.props.events ? showSchedule() : (this.props.requesting ? null : showError())}
       </div>
     );
   }

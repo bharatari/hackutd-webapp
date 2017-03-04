@@ -20,6 +20,7 @@ export default class Sidebar extends React.Component {
             <div className="card-content">
               <span className="card-title">{this.props.data[i].name}</span>
               <p>{this.props.data[i].description}</p>
+              <p className="card-time">{this.props.data[i].time}</p>
               <br />
               {this.props.actions ? (
                 <div className="card-action reactions">

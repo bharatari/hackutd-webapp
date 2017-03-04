@@ -1,11 +1,11 @@
 import { handleActions } from 'redux-actions';
+import _ from 'lodash';
 
 const initialState = {
   fetchAnnouncements: {
     requesting: false,
     announcements: null,
     error: null,
-    total: null,
   },
 };
 
@@ -25,9 +25,8 @@ export default handleActions({
         fetchAnnouncements: {
           ...state.fetchAnnouncements,
           requesting: false,
-          announcements: action.payload.data,
+          announcements: _.reverse(action.payload),
           error: null,
-          total: action.payload.total,
         },
       };
     },
@@ -39,7 +38,6 @@ export default handleActions({
           requesting: false,
           announcements: null,
           error: action.payload,
-          total: null,
         },
       };
     }

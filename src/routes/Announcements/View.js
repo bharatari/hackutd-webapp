@@ -13,6 +13,7 @@ export default class ScheduleView extends React.Component {
     this.props.actions.fetchAnnouncements();
   }
   render() {
+    console.log(this.props.announcements);
     let showAnnouncements = () => (
       <div>
         <div className="container schedule hide-on-small-only">

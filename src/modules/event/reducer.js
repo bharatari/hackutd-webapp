@@ -5,7 +5,6 @@ const initialState = {
     requesting: false,
     events: null,
     error: null,
-    total: null,
   },
   fetchEvent: {
     requesting: false,
@@ -20,7 +19,6 @@ export default handleActions({
     fetchEvents: {
       ...state.fetchEvents,
       requesting: true,
-      total: null,
     },
   }),
   RECEIVE_EVENTS: {
@@ -30,9 +28,8 @@ export default handleActions({
         fetchEvents: {
           ...state.fetchEvents,
           requesting: false,
-          events: action.payload.data,
+          events: action.payload,
           error: null,
-          total: action.payload.total,
         },
       };
     },
@@ -44,7 +41,6 @@ export default handleActions({
           requesting: false,
           events: null,
           error: action.payload,
-          total: null,
         },
       };
     }

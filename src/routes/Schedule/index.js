@@ -7,6 +7,7 @@ import * as event from 'modules/event/actions';
 const mapStateToProps = (state, ownProps) => ({
   currentUrl: ownProps.location.pathname,
   events: state.event.fetchEvents.events,
+  requesting: state.event.fetchEvents.requesting,
 });
 
 const actionCreators = {

@@ -6,7 +6,7 @@ export function* fetchEvents() {
   yield put(actions.requestEvents());
 
   try {
-    const response = yield call(data.request.bind(data), 'events.json', 'get');
+    const response = yield call(data.request.bind(data), 'events', 'get');
 
     yield put(actions.receiveEvents(response));
   } catch (e) {
@@ -18,7 +18,7 @@ export function* fetchEvent(id) {
   yield put(requestEvent());
 
   try {
-    const response = yield call(data.request.bind(data), 'events.json', 'get', id);
+    const response = yield call(data.request.bind(data), 'events', 'get', id);
 
     yield put(actions.receiveEvent(response));
   } catch (e) {

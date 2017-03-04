@@ -59,7 +59,7 @@ export default {
       }
     }
     
-    return url;
+    return url + '.json';
   },
   processOptions(body, method, serialize) {
     let options = { 

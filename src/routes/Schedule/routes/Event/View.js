@@ -12,13 +12,19 @@ export default class ScheduleView extends React.Component {
     this.props.actions.fetchEvent(this.props.id);
   }
   render() {
+    const content = () => (
+      <div>
+        <h3>{this.props.event.name}</h3>
+      </div>
+    );
+
     return (
       <div>
         <Navbar />
         <div className="container schedule">
           <div className="row">
             <div className="col s12 l8 offset-l2">
-              <h3>Schedule</h3>
+              { this.props.event ? content() : null }
             </div>
           </div>
         </div>

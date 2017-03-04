@@ -281,6 +281,10 @@
    * 
    */
 
+  #sidenav-overlay {
+    display: none;
+  }
+
   nav {
     background: #2a3245;
 
@@ -290,14 +294,27 @@
 
       img {
         height: 100%;
-        padding: 7px;
+        padding: 10px 0 15px 0;
+      }
+    }
+
+    .side-nav {
+      padding-top: 10px;
+
+      a {
+        font-size: 18px;
+        color: #2a3245;
       }
     }
   }
 
   .schedule {
-    .collection-item {
-      color: #5fc6c1 !important;
+    .collection {
+      margin-top: 0;
+
+      .collection-item {
+        color: #5fc6c1 !important;
+      }
     }
   }
 }

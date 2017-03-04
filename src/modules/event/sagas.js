@@ -14,11 +14,11 @@ export function* fetchEvents() {
   }
 }
 
-export function* fetchEvent(id) {
-  yield put(requestEvent());
+export function* fetchEvent(action) {
+  yield put(actions.requestEvent());
 
   try {
-    const response = yield call(data.request.bind(data), 'events', 'get', id);
+    const response = yield call(data.request.bind(data), 'events', 'get', action.payload);
 
     yield put(actions.receiveEvent(response));
   } catch (e) {

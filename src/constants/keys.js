@@ -11,10 +11,10 @@ export const routes = [
     key: 'Announcements',
     value: '/app/announcements',
   },
-  {
-    key: 'Map',
-    value: '/app/map',
-  },
+  // {
+  //   key: 'Map',
+  //   value: '/app/map',
+  // },
   {
     key: 'Social',
     value: '/app/social',

@@ -318,6 +318,16 @@
     }
   }
 
+  .event-card {
+    margin-top: 20px;
+
+    .card-action {
+      a {
+        color: #5fc6c1 !important;
+      }
+    }
+  }
+
   @media only screen and (max-width: 768px) {
     .schedule {
       .collection {

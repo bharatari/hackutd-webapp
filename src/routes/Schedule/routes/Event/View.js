@@ -16,7 +16,7 @@ export default class ScheduleView extends React.Component {
       <div>
         <div className="row">
           <div className="col s12">
-            <div className="card">
+            <div className="card event-card">
               <div className="card-content">
                 <span className="card-title">{this.props.event.name}</span>
                 <p>{this.props.event.description}</p>
@@ -45,6 +45,9 @@ export default class ScheduleView extends React.Component {
                     <p>{this.props.event.description}</p>
                   </div>
                 </div>
+              </div>
+              <div className="card-action">
+                <a href="/">Back to schedule</a>
               </div>
             </div>
           </div>

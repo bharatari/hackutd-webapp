@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import classes from './styles.scss';
 import classNames from 'classnames';
+import { routes } from '../../constants/keys';
 
 export default class Sidebar extends React.Component {
   static propTypes = {
@@ -11,22 +12,21 @@ export default class Sidebar extends React.Component {
      $(".button-collapse").sideNav();
   }
   render() {
+    let renderedRoutes = [];
+    routes.forEach((route, index) => {
+      renderedRoutes.push(<li key="{ index }"><a href="{ route.value }">{ route.key }</a></li>);
+    });
+
     return (
       <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">HackUTD</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+        <div className="nav-wrapper">
+          <a href="/" className='brand-logo'><img src="http://hackutd.co/img/LogoWhiteHorizontal.svg" /></a>
+          <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
+          <ul className="right hide-on-med-and-down">
+            { renderedRoutes }
           </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
+          <ul className="side-nav" id="mobile-demo">
+            { renderedRoutes }
           </ul>
         </div>
       </nav>

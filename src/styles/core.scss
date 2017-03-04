@@ -274,4 +274,30 @@
       display: block !important;
     }
   }
+
+  /**
+   *
+   * @section - 8. Custom overriding stuff
+   * 
+   */
+
+  nav {
+    background: #2a3245;
+
+    .brand-logo {
+      padding-left: 10px;
+      height: 100%;
+
+      img {
+        height: 100%;
+        padding: 7px;
+      }
+    }
+  }
+
+  .schedule {
+    .collection-item {
+      color: #5fc6c1 !important;
+    }
+  }
 }

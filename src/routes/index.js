@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
 import Schedule from './Schedule';
-import Event from './Event';
+import Event from './Schedule/Event';
 import Announcements from './Announcements';
 import Map from './Map';
 import Social from './Social';

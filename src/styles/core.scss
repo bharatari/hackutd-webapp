@@ -317,4 +317,14 @@
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .schedule {
+      .collection {
+        a.collection-item:hover {
+          background: white;
+        }
+      }
+    }
+  }
 }

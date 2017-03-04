@@ -11,7 +11,7 @@ export default class ScheduleView extends React.Component {
   componentDidMount() {
     this.props.actions.fetchEvents();
   }
-  navigate(id) {
+  navigate = (id) => {
     this.props.actions.push('/app/event/' + id);
   }
   render() {
@@ -22,12 +22,12 @@ export default class ScheduleView extends React.Component {
             <div className="row">
               <div className="col s12 l8 offset-l2">
                 <h3>Schedule</h3>
-                <List data={this.props.events ? this.props.events : null} />
+                <List data={this.props.events ? this.props.events : null} onClick={this.navigate} />
               </div>
             </div>
           </div>
           <div className="schedule hide-on-med-and-up">
-            <List data={this.props.events ? this.props.events : null} />
+            <List data={this.props.events ? this.props.events : null}  onClick={this.navigate} />
           </div>
         </div>
       );

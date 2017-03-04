@@ -13,7 +13,7 @@ export default class ScheduleView extends React.Component {
     this.props.actions.fetchEvents();
   }
   render() {
-    let showSchedule = () => {
+    let showAnnouncements = () => {
       return (
         <div>
           <div className="container schedule hide-on-small-only">
@@ -52,7 +52,7 @@ export default class ScheduleView extends React.Component {
     return (
       <div>
         <Navbar />
-        {this.props.events ? showSchedule() : (this.props.requesting ? null : showError())}
+        {this.props.events ? showAnnouncements() : (this.props.requesting ? null : showError())}
       </div>
     );
   }

@@ -10,7 +10,7 @@ export default class ScheduleView extends React.Component {
     user: PropTypes.object,
   };
   componentDidMount() {
-    this.props.actions.fetchEvents();
+    this.props.actions.fetchAnnouncements();
   }
   render() {
     let showAnnouncements = () => (
@@ -19,12 +19,12 @@ export default class ScheduleView extends React.Component {
           <div className="row">
             <div className="col s12 l8 offset-l2">
               <h3>Announcements</h3>
-              <CardList data={this.props.events ? this.props.events : null} onClick={this.navigate} actions={true} />
+              <CardList data={this.props.announcements ? this.props.announcements : null} onClick={this.navigate} actions={false} />
             </div>
           </div>
         </div>
         <div className="schedule hide-on-med-and-up">
-          <CardList data={this.props.events ? this.props.events : null}  onClick={this.navigate} actions={true} />
+          <CardList data={this.props.announcements ? this.props.announcements : null}  onClick={this.navigate} actions={false} />
         </div>
       </div>
     );
@@ -48,7 +48,7 @@ export default class ScheduleView extends React.Component {
     return (
       <div>
         <Navbar />
-        {this.props.events ? showAnnouncements() : (this.props.requesting ? null : showError())}
+        {this.props.announcements ? showAnnouncements() : (this.props.requesting ? null : showError())}
       </div>
     );
   }

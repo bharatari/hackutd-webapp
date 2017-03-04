@@ -9,7 +9,7 @@ import Social from './Social';
 import NotFound from './NotFound/View';
 
 export default (store) => (
-  <Route path="/" component={Transition}>
+  <Route path="/">
     <IndexRoute component={Schedule} />
     <Route path="/app/event/:id" component={Event} />
     <Route path="/app/announcements" component={Announcements} />

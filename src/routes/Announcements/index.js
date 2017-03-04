@@ -2,17 +2,17 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import View from './View';
 import { routerActions } from 'react-router-redux';
-import * as event from 'modules/event/actions';
+import * as announcement from 'modules/announcement/actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUrl: ownProps.location.pathname,
-  events: state.event.fetchEvents.events,
-  requesting: state.event.fetchEvents.requesting,
+  announcements: state.announcement.fetchAnnouncements.announcements,
+  requesting: state.announcement.fetchAnnouncements.requesting,
 });
 
 const actionCreators = {
   ...routerActions,
-  ...event,
+  ...announcement,
 };
 
 const mapDispatchToProps = (dispatch) => ({

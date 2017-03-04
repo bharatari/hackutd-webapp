@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute, Redirect } from 'react-router';
+import Transition from 'containers/Transition';
 import Schedule from './Schedule';
 import Event from './Schedule/routes/Event';
 import Announcements from './Announcements';
@@ -8,7 +9,7 @@ import Social from './Social';
 import NotFound from './NotFound/View';
 
 export default (store) => (
-  <Route path="/">
+  <Route path="/" component={Transition}>
     <IndexRoute component={Schedule} />
     <Route path="/app/event/:id" component={Event} />
     <Route path="/app/announcements" component={Announcements} />

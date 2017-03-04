@@ -11,6 +11,9 @@ export default class ScheduleView extends React.Component {
   componentDidMount() {
     this.props.actions.fetchEvent(this.props.id);
   }
+  handleClick = () => {
+    this.props.actions.push('/');
+  };
   render() {
     const content = () => (
       <div>
@@ -56,7 +59,7 @@ export default class ScheduleView extends React.Component {
                 ) : null}
               </div>
               <div className="card-action">
-                <a href="/">Back to schedule</a>
+                <a href="javascript:void(0)" onClick={this.handleClick}>Back to schedule</a>
               </div>
             </div>
           </div>

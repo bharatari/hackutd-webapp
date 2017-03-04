@@ -24,7 +24,7 @@ export default class ScheduleView extends React.Component {
           </div>
         </div>
         <div className="schedule hide-on-med-and-up">
-          <CardList data={this.props.events ? this.props.events : null}  onClick={this.navigate} />
+          <CardList data={this.props.events ? this.props.events : null}  onClick={this.navigate} actions={true} />
         </div>
       </div>
     );
